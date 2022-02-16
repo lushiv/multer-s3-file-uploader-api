@@ -39,7 +39,7 @@ app.post('/upload-file', uploadFileHelper.single('file'), (req, res, next) => {
         if(req){
             response = res.send(req.file);
             responseData = {
-                fileUrl : fileUrl
+                fileUrl : response.location
             }
             if(responseData){
                 return res.status(HTTPStatus.OK).json({
